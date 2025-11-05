@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 1000px;
+            width: 1000px;
+            border: solid black;
+            align-content: center;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: brown;
+            color: blanchedalmond;
+            padding: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Generater</h1>
+    <div>Color Generator</div>
+    <button onclick="changecolor()">Change color</button>
+    <script>
+        function generateColor()
+         {
+            let r = Math.floor(Math.random()*255);
+            let g = Math.floor(Math.random()*255);
+            let b = Math.floor(Math.random()*255);
+
+             return `rgb(${r},${g},${b})`;
+        }
+        function changecolor() 
+        {
+            let newColor = generateColor();
+            const container = document.querySelector("div");
+            container.style.background = newColor;
+            container.innerText = newColor;
+        }
+    </script>
+</body>
+
+</html>
